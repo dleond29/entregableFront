@@ -2,6 +2,7 @@ import data from "./data";
 import React, { Component } from "react";
 import Opciones from "./Opciones";
 import Recordatorio from "./Recordatorio";
+import Swal from 'sweetalert2'
 
 const historial = [];
 
@@ -13,8 +14,8 @@ class Main extends Component {
       seleccionPrevia: "",
     };
   }
-
-  componentDidUpdate(prevState) {
+  
+  componentDidUpdate(prevProps, prevState) {
     if (prevState.contador !== this.state.contador) {
       historial.push(this.state.seleccionPrevia);
     }
@@ -23,7 +24,7 @@ class Main extends Component {
   handleClick = (e) => {
     const id = e.target.id;
     if (this.state.contador >= 7) {
-      alert("Fin de la historia.");
+      Swal.fire('Fin de la historia');
     } else if (id === "A" && this.state.seleccionPrevia !== "A") {
       this.setState({
         contador: this.state.contador + 1,

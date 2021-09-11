@@ -3,6 +3,16 @@
   box-sizing: border-box;
   background-color: black;
 }
+
+.swal2-title{
+  background-color: rgb(255, 255, 255);
+}
+
+.swal2-actions {
+  background-color: #fff;
+}
+
+
 .layout {
   height: 100vh;
   max-width: 500px;
